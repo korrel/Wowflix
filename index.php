@@ -28,31 +28,31 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto menu-principal">
-                    <li class="nav-item active">
+                    <li class="nav-item active p-2">
                         <a class="nav-link" href="#">Accueil</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Vanilla</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Burning Crusade</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Wrath of the Lich King</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Cataclysm</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Mists of Pandaria</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Warlords of Draenor</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Legion</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">Battle for Azeroth</a>
                     </li>
                 </ul>
@@ -60,6 +60,7 @@
         </nav>
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 
+
         <section class="container-fluid intro px-0 position-relative">
             <video autoplay muted loop id="bg-video">
                 <source src="assets/video/wow.mp4" type="video/mp4">
@@ -82,38 +83,20 @@
     
     <!-- ///////////////////////////  FOOTER /////////////////////////// --> 
 
-    <footer class="pt-4 my-md-5 pt-md-5 bg-dark">
+    <footer class="container-fluid pt-4 my-md-5 pt-md-5 bg-dark footer-content">
         <div class="container">
-            <div class="row">
-            <div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Cool stuff</a></li>
-                <li><a class="text-muted" href="#">Random feature</a></li>
-                <li><a class="text-muted" href="#">Team feature</a></li>
-                <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                <li><a class="text-muted" href="#">Another one</a></li>
-                <li><a class="text-muted" href="#">Last time</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Resource</a></li>
-                <li><a class="text-muted" href="#">Resource name</a></li>
-                <li><a class="text-muted" href="#">Another resource</a></li>
-                <li><a class="text-muted" href="#">Final resource</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Team</a></li>
-                <li><a class="text-muted" href="#">Locations</a></li>
-                <li><a class="text-muted" href="#">Privacy</a></li>
-                <li><a class="text-muted" href="#">Terms</a></li>
-                </ul>
-            </div>
+            <div class="row flex-direction-row">
+                <div class="col-12 col-md">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled d-flex justify-content-center align-items-center text-small">
+                    <li><a class="text-muted px-2" href="#">Cool stuff</a></li>
+                    <li><a class="text-muted px-2" href="#">Random feature</a></li>
+                    <li><a class="text-muted px-2" href="#">Team feature</a></li>
+                    <li><a class="text-muted px-2" href="#">Stuff for developers</a></li>
+                    <li><a class="text-muted px-2" href="#">Another one</a></li>
+                    <li><a class="text-muted px-2" href="#">Last time</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
       </footer>
