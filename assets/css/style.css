@@ -1,3 +1,8 @@
+/* ------------------------------- footer ---------------------------- */
+
+body {
+    background-color: rgb(2, 15, 22);
+}
 
 /* ------------------------------- header ---------------------------- */
 
@@ -51,7 +56,7 @@
 }
 
 .menu-principal .active{
-    background: #2b88d9;
+    background: linear-gradient(to bottom, rgba(169,3,41,1) 0%, rgba(212,22,22,1) 100%);
     color: rgb(255, 255, 255);
 }
 
@@ -64,20 +69,77 @@
     height: 100%;
 }
 
-.btn-primary a{
+.btn-redy {
    border:none;
-   background: linear-gradient(to bottom, #3b679e 0%, #2b88d9 100%)!important;
+   background: linear-gradient(to bottom, rgba(169,3,41,1) 0%, rgba(212,22,22,1) 100%)!important;
 }
 
-.btn-primary a:hover {
-    background:  #2b88d9;
+.btn-redy a:hover {
+    background: rgba(212,22,22,1);
 }
+
+.deuxieme-section {
+    background: linear-gradient(to bottom, rgba(36, 36, 36, 0.3) 0%, rgba(2,15,22,1) 100%);
+    width: 100;
+}
+
+/* ------------------------------- main ---------------------------- */
+
+
+
+.encart-titre h2{
+    border-left:4px solid rgba(169,3,41,1);
+    padding-left:10px;
+}
+
+.btn-tous {
+    color: #777;
+    border-right:2px solid rgba(169,3,41,1)!important;
+}
+
+a:hover .btn-tous {
+    color : #fff;
+    background-color:transparent;
+    border-right:2px solid rgba(169,3,41,1)!important;
+}
+
+.routier {
+
+}
+
+.filtre-sombre{
+    background-color: rgba(169,3,41,1);
+    overflow: hidden;
+}
+
+.filtre-sombre img{
+    opacity: 1; 
+    transform: scale(1);
+    transition: all 0.3s linear;
+}
+
+.filtre-sombre:hover img{
+    opacity: 0.3; 
+    transform: scale(1.2);
+}
+
+.icone-play {
+    top:50%;
+    left:50%;
+    font-size: 3rem;
+    transform: translate(-50%,-50%);
+    opacity:0;
+    transition: all 0.3s linear;
+}
+
+.filtre-sombre:hover .icone-play {
+    opacity: 1; 
+}
+
 
 /* ------------------------------- footer ---------------------------- */
 
 .footer-content {
-    position: absolute;
-    bottom: 0;
-    margin: 0;
+    position: relative;
     margin-bottom: 0 !important;
 }

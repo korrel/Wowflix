@@ -11,6 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <!-- Custom styles du site -->
     <link rel="stylesheet" href="assets/css/style.css" >
   </head>
@@ -35,25 +36,25 @@
                         <a class="nav-link" href="#">Vanilla</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Burning Crusade</a>
+                        <a class="nav-link" href="#">BC</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Wrath of the Lich King</a>
+                        <a class="nav-link" href="#">WotLK</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Cataclysm</a>
+                        <a class="nav-link" href="#">Cata</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Mists of Pandaria</a>
+                        <a class="nav-link" href="#">MoP</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Warlords of Draenor</a>
+                        <a class="nav-link" href="#">WoD</a>
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link" href="#">Legion</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Battle for Azeroth</a>
+                        <a class="nav-link" href="#">Bfa</a>
                     </li>
                 </ul>
             </div>
@@ -61,7 +62,7 @@
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 
 
-        <section class="container-fluid intro px-0 position-relative">
+        <section class="container-fluid intro px-0 position-relative border-bottom border-danger">
             <video autoplay muted loop id="bg-video">
                 <source src="assets/video/wow.mp4" type="video/mp4">
             </video>
@@ -70,7 +71,7 @@
                 <div class="container text-center text-white">
                     <h1 class="display-4">Battle for Azeroth est là !</h1>
                     <p class="lead">Venez découvrir la nouvelle cinématique de la nouvelle extension de World of Warcraft</p>
-                    <a><button type="button" class="btn btn-primary">Voir la bande annonce</button></a>
+                    <a><button type="button" class="btn btn-danger btn-redy"><i class="fas fa-play-circle"></i> Voir la bande annonce</button></a>
                 </div>
             </div>
 
@@ -80,6 +81,130 @@
     </header>
 
     <!-- ///////////////////////////  CONTENU PRINCIPAL /////////////////////////// -->
+
+    <main>
+        <section class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 pt-5 py-3 encart-titre">
+                        <h2 class="display-6 text-white">Titre de ma section</h2>
+                        <p class="text-muted">Loremefidsvsfnk fe foiesj ifs igsigjks f iosi gs< gisj gzs s gsi gsijil js . </p>
+                    </div>
+                    <div class="col-md-3 pt-5 py-3 text-right">
+                        <a href="#" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
+                    </div>
+                </div>
+
+                <!-- ///////////////////////////  1er CONTENU /////////////////////////// -->
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <!-- ///////////////////////////  1ère CONTENU /////////////////////////// -->
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ///////////////////////////  2eme CONTENU /////////////////////////// -->
+
+        <section class="container-fluid">
+            <div class="container deuxieme-section">
+                <div class="row">
+                    <div class="col-md-9 pt-5 py- encart-titre">
+                        <h2 class="display-6 text-white">Titre de ma section</h2>
+                        <p class="text-muted">Loremefidsvsfnk fe foiesj ifs igsigjks f iosi gs< gisj gzs s gsi gsijil js . </p>
+                    </div>
+                    <div class="col-md-3 pt-5 py-3 text-right">
+                        <a href="#" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                            <a href="#" class="filtre-sombre position-relative">
+                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                            </a>
+                            <div class="card-body p-0 d-flex">
+                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
+                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                            </div>
+                        </div>   
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
     
     <!-- ///////////////////////////  FOOTER /////////////////////////// --> 
 
