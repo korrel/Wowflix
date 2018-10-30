@@ -6,6 +6,10 @@ require_once(__DIR__.'/../config/config.php');
 require_once(__DIR__.'/../config/database.php'); 
 require_once(__DIR__.'/../config/function.php');
 
+// Récupère toutes les catégories
+$query = $db -> query('SELECT * FROM category');
+$films = $query -> fetchAll();
+
 ?>
 
 <!-- ///////////////////////////  html /////////////////////////////////-->
@@ -47,39 +51,28 @@ require_once(__DIR__.'/../config/function.php');
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto menu-principal">
                     <li class="nav-item active p-2 <?= ($currentPageUrl === 'index')? 'active' : ''; ?>">
                         <a class="nav-link" href="index.php">Accueil</a>
                     </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">Vanilla</a>
+
+                    <!-- //////////// génération de mon menu avec la BD ///////////////////////-->
+
+                    <?php foreach($films as $film) { ?>
+                    
+                    <li class="nav-item p-2 <?= ($currentPageUrl === $current_category ? 'active' : ''); ?> ">
+                        <a class="nav-link" href="<?php 
+                            echo'movie_category.php?id='. $film['id']; ?>"><?= ($film['Acronyme']); ?></a>
                     </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">BC</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">WotLK</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">Cata</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">MoP</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">WoD</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">Legion</a>
-                    </li>
-                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
-                        <a class="nav-link" href="movie_category.php">Bfa</a>
-                    </li>
+
+                    <?php } ?>
                 </ul>
             </div>
 
-            <a href="movie_add.php" class="btn btn-sm btn-outline-danger btn-nav-ajout px-3 <?= ($currentPageUrl === 'movie_add')? 'active' : ''; ?>" type="button">Ajouter une vidéo</a>
+
+            <a href="movie_add.php" class="btn btn-sm btn-outline-dark btn-nav-ajout px-3 <?= ($currentPageUrl === 'movie_add')? 'active' : ''; ?>" type="button">Ajouter une vidéo</a>
         </nav>
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 
