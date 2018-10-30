@@ -227,6 +227,19 @@ a:hover.btn-nav-ajout {
     background-color: rgba(194, 194, 194, 0.575);
 }
 
+.encart-viv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 200px;
+    overflow: hidden;
+}
+
+.encart-viv img {
+    height: 100%;
+}
+
 /* ------------------------------- Page Single ---------------------------- */
 
 .titre_single{
