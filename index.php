@@ -15,54 +15,30 @@
                         <a href="#" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
                     </div>
                 </div>
-
+                
                 <!-- ///////////////////////////  1er CONTENU /////////////////////////// -->
+                <?php foreach ($movies as $movie){ ?>
 
                 <div class="row">
-
                     <div class="col-md-4">
                         <div class="card mb-3 bg-transparent position-relative encart-visuel">
                             <a href="#" class="filtre-sombre position-relative">
                                 <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                                <img class="card-img-top" src="assets/<?php echo($movie['cover']);?>" alt="<?php echo($movie['title']);?>">
                             </a>
                             <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                                <h6 class="col-8 p-2 text-white "><?php echo($movie['title']);?></h6>
+                                <p class="col-4 p-2 text-danger text-right"><?php echo($movie['released_at']);?></p>
                             </div>
                         </div>   
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
-                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
-                            </a>
-                            <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
-                            </div>
-                        </div>   
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
-                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
-                            </a>
-                            <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
-                            </div>
-                        </div>   
-                    </div>
-
-
                 </div>
+
+                <?php }?>
+
             </div>
         </section>
+
 
         <!-- ///////////////////////////  WOW le film /////////////////////////// -->
 

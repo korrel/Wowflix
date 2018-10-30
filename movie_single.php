@@ -1,8 +1,8 @@
 <?php 
 
+$currentPageTitle = 'Un film de World of Warcraft';
 require_once(__DIR__.'/partials/header.php');
 
-$currentPageTitle = 'Un film de World of Warcraft';
 
 ?>
 

@@ -5,6 +5,10 @@
 require_once(__DIR__.'/../config/config.php'); 
 require_once(__DIR__.'/../config/database.php'); 
 
+// Récupère la liste des pizzas
+$query = $db -> query('SELECT * FROM movies');
+$movies = $query -> fetchAll();
+
 ?>
 
 <!-- ///////////////////////////  html /////////////////////////////////-->

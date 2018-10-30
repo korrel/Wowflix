@@ -1,8 +1,8 @@
 <?php 
 
+$currentPageTitle = 'Une extension de World of Warcraft';
 require_once(__DIR__.'/partials/header.php');
 
-$currentPageTitle = 'Une extension de World of Warcraft';
 
 ?>
 

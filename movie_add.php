@@ -1,8 +1,8 @@
 <?php 
 
+$currentPageTitle = 'Ajouter un film';
 require_once(__DIR__.'/partials/header.php');
 
-$currentPageTitle = 'Ajouter un film';
 
 ?>
 
