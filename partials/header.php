@@ -4,10 +4,7 @@
 // ATTENTION on part du fichier HEADER qui inclus le fichier PHP
 require_once(__DIR__.'/../config/config.php'); 
 require_once(__DIR__.'/../config/database.php'); 
-
-// Récupère la liste des pizzas
-$query = $db -> query('SELECT * FROM movies');
-$movies = $query -> fetchAll();
+require_once(__DIR__.'/../config/function.php');
 
 ?>
 

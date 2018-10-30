@@ -11,7 +11,7 @@
 $siteName = 'Wowflix';
 
 // Si REQUEST_URI vaut /home/toto/fichier.php --> on enlève ".php"
-$currentPageUrl = basename ($_SERVER['REQUEST_URI'], '.php');
+$currentPageUrl = basename ($_SERVER['SCRIPT_FILENAME'], '.php');
 
 
 

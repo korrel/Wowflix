@@ -1,5 +1,11 @@
 <!-- Le fichier Header.php est inclus sur la page -->
-<?php require_once(__DIR__.'/partials/header.php'); ?>
+<?php require_once(__DIR__.'/partials/header.php'); 
+
+// Récupère la liste des pizzas
+$query = $db -> query('SELECT * FROM movies INNER JOIN category ON movies.category_id = category.id');
+$movies = $query -> fetchAll();
+
+?>
 
     <!-- ///////////////////////////  CONTENU PRINCIPAL /////////////////////////// -->
 
@@ -8,33 +14,42 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 pt-5 py-3 encart-titre">
-                        <h2 class="display-6 text-white">Titre de ma section</h2>
-                        <p class="text-muted">Loremefidsvsfnk fe foiesj ifs igsigjks f iosi gs< gisj gzs s gsi gsijil js . </p>
+                        <h2 class="display-6 text-white"> Vanilla</h2>
+                        <p class="text-muted">Le jeu prend place dans le monde imaginaire d’Azeroth à son début.</p>
                     </div>
                     <div class="col-md-3 pt-5 py-3 text-right">
-                        <a href="#" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
+                        <a href="" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
                     </div>
                 </div>
                 
                 <!-- ///////////////////////////  1er CONTENU /////////////////////////// -->
-                <?php foreach ($movies as $movie){ ?>
-
+                
+                
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
-                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/<?php echo($movie['cover']);?>" alt="<?php echo($movie['title']);?>">
-                            </a>
-                            <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white "><?php echo($movie['title']);?></h6>
-                                <p class="col-4 p-2 text-danger text-right"><?php echo($movie['released_at']);?></p>
-                            </div>
-                        </div>   
-                    </div>
+                    <?php 
+
+                    foreach ($movies as $movie){ 
+                        if($movie['name'] === 'Vanilla'){
+
+                    ?>
+                        <div class="col-md-4">
+                            <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                                <a href="<?= "movie_single.php?id=" . $movie['category_id'] ?>" class="filtre-sombre position-relative">
+                                    <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
+                                    <img class="card-img-top" src="assets/<?php echo($movie['cover']);?>" alt="<?php echo($movie['title']);?>">
+                                </a>
+                                <div class="card-body p-0 d-flex">
+                                    <h6 class="col-8 p-2 text-white "><?php echo($movie['title']);?></h6>
+                                    <p class="col-4 p-2 text-danger text-right"><?php echo($movie['released_at']);?></p>
+                                </div>
+                            </div>   
+                        </div>
+                    <?php 
+                        }
+                    }
+                    ?>
                 </div>
 
-                <?php }?>
 
             </div>
         </section>
@@ -74,55 +89,37 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 pt-5 py- encart-titre">
-                        <h2 class="display-6 text-white">Titre de ma section</h2>
-                        <p class="text-muted">Loremefidsvsfnk fe foiesj ifs igsigjks f iosi gs< gisj gzs s gsi gsijil js . </p>
+                        <h2 class="display-6 text-white">Wrath of the Lich King</h2>
+                        <p class="text-muted">L’extension se déroule après « The Burning Crusade ».</p>
                     </div>
                     <div class="col-md-3 pt-5 py-3 text-right">
                         <a href="#" ><button type="button" class="btn btn-outline-light rounded-0 border-0 btn-tous">Voir toutes les vidéos</button></a>
                     </div>
                 </div>
                 
+                
                 <div class="row">
-                    
+                <?php  foreach ($movies as $movie){ 
+                    if($movie['name'] === 'Wrath of the Lich King'){
+                ?>
                     <div class="col-md-4">
                         <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
+                            <a href="<?= "movie_single.php?id=" . $movie['category_id'] ?>" class="filtre-sombre position-relative">
                                 <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
+                                <img class="card-img-top" src="assets/<?php echo($movie['cover']);?>" alt="<?php echo($movie['title']);?>">
                             </a>
                             <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
+                                <h6 class="col-8 p-2 text-white "><?php echo($movie['title']);?></h6>
+                                <p class="col-4 p-2 text-danger text-right"><?php echo($movie['released_at']);?></p>
                             </div>
                         </div>   
                     </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
-                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
-                            </a>
-                            <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
-                            </div>
-                        </div>   
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card mb-3 bg-transparent position-relative encart-visuel">
-                            <a href="#" class="filtre-sombre position-relative">
-                                <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
-                                <img class="card-img-top" src="assets/img/legion_background.jpg" alt="titre de l'image">
-                            </a>
-                            <div class="card-body p-0 d-flex">
-                                <h6 class="col-8 p-2 text-white ">Title de la vidéo</h6>
-                                <p class="col-4 p-2 text-danger text-right">11-2018</p>
-                            </div>
-                        </div>   
-                    </div>
-                    
+                <?php 
+                    }
+                }
+                ?>      
+                </div>
+
                     
                 </div>
             </div>
