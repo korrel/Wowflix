@@ -83,7 +83,7 @@
     <!-- ///////////////////////////  CONTENU PRINCIPAL /////////////////////////// -->
 
     <main>
-        <section class="container-fluid">
+        <section class="container-fluid pt-4 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 pt-5 py-3 encart-titre">
@@ -112,8 +112,6 @@
                         </div>   
                     </div>
 
-                    <!-- ///////////////////////////  1ère CONTENU /////////////////////////// -->
-                    
                     <div class="col-md-4">
                         <div class="card mb-3 bg-transparent position-relative encart-visuel">
                             <a href="#" class="filtre-sombre position-relative">
@@ -145,10 +143,40 @@
             </div>
         </section>
 
+        <!-- ///////////////////////////  WOW le film /////////////////////////// -->
+
+        <section class="container-fluid encart-commencement position-relative">
+            <div class=" wow-commencement"></div>
+            <div class="container h-100 position-relative align-items-center">
+                <div class="row h-100 w-100 align-items-center">
+                    <div class="col-md-4 volet-gauche">
+                        <div class="col">
+                            <img src="assets/img/miniature-warcraft-le-film.jpg" alt="" class="affiche-film">
+                        </div>
+                        <div class="col">
+                            <h2 class="display-6 text-white">Warcraft</h2>
+                            <h2 class="display-6 text-white">Le commencement</h2>
+                            <p class="p-2 bg-menu text-white">Sortie en Avril 2016</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <iframe width="560" height="315" class="shadow-video" src="https://www.youtube.com/embed/VFQD4rNr_BU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
         <!-- ///////////////////////////  2eme CONTENU /////////////////////////// -->
 
-        <section class="container-fluid">
-            <div class="container deuxieme-section">
+        <section class="container-fluid deuxieme-section position-relative pt-4 pb-5">
+            <div class="bg-nuit"></div>
+
+            <div class="container">
                 <div class="row">
                     <div class="col-md-9 pt-5 py- encart-titre">
                         <h2 class="display-6 text-white">Titre de ma section</h2>

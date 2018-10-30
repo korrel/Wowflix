@@ -79,8 +79,20 @@ body {
 }
 
 .deuxieme-section {
+    background: url(../img/bg-mur.jpg) no-repeat center;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-nuit {
     background: linear-gradient(to bottom, rgba(36, 36, 36, 0.3) 0%, rgba(2,15,22,1) 100%);
-    width: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
 }
 
 /* ------------------------------- main ---------------------------- */
@@ -134,6 +146,43 @@ a:hover .btn-tous {
 
 .filtre-sombre:hover .icone-play {
     opacity: 1; 
+}
+
+.encart-commencement {
+    height:500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.affiche-film {
+    max-height: 240px;
+    height:100%;
+}
+
+.shadow-video {
+    box-shadow: 0 0 3rem rgba(139, 1, 1, 0.5);
+}
+
+.volet-gauche {
+    justify-content: center;
+    height: 100%;
+    background-color: #00000075;
+    display: flex;
+    flex-direction: column;
+}
+
+.wow-commencement {
+    height: 550px;
+    background-image: url(../img/warcraft-le-film.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    filter : blur(5px);
+    position: absolute;
+    left:0;
+    top:-10%;
+    opacity: 0.5;
 }
 
 
