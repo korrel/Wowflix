@@ -10,8 +10,6 @@
 
 $siteName = 'Wowflix';
 
-// Page courante et titre de la balise Title
-$currentPageTitle = null;
 // Si REQUEST_URI vaut /home/toto/fichier.php --> on enlève ".php"
 $currentPageUrl = basename ($_SERVER['REQUEST_URI'], '.php');
 

@@ -1,10 +1,9 @@
 <?php
 
-// Le fichier config.php est inclus sur toutes les pages -->
+// Le fichier config.php et databas.php est inclus sur toutes les pages -->
 // ATTENTION on part du fichier HEADER qui inclus le fichier PHP
 require_once(__DIR__.'/../config/config.php'); 
-
-$currentPageTitle = null;
+require_once(__DIR__.'/../config/database.php'); 
 
 ?>
 
@@ -21,7 +20,7 @@ $currentPageTitle = null;
 
     <title>
         <?php 
-            if ($currentPageTitle === null) {  // si on est sur la page d'accueil
+            if (empty($currentPageTitle)) {  // si on est sur la page d'accueil
                 echo $siteName. ' | Cinématiques de World of Warcraft';
             }else { // si on est sur une autre page
                 echo $currentPageTitle . ' | ' .$siteName;
@@ -67,7 +66,7 @@ $currentPageTitle = null;
                     <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
                         <a class="nav-link" href="movie_category.php">MoP</a>
                     </li>
-                    <li class="nav-item p-2 <?= ($page === 'movie_category')? 'active' : ''; ?>">
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
                         <a class="nav-link" href="movie_category.php">WoD</a>
                     </li>
                     <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
@@ -79,7 +78,7 @@ $currentPageTitle = null;
                 </ul>
             </div>
 
-            <a class="btn btn-sm btn-outline-danger btn-nav-ajout px-3" type="button">Ajouter une vidéo</a>
+            <a href="movie_add.php" class="btn btn-sm btn-outline-danger btn-nav-ajout px-3 <?= ($currentPageUrl === 'movie_add')? 'active' : ''; ?>" type="button">Ajouter une vidéo</a>
         </nav>
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 
@@ -93,7 +92,7 @@ $currentPageTitle = null;
                 <div class="container text-center text-white">
                     <h1 class="display-4">Battle for Azeroth est là !</h1>
                     <p class="lead">Venez découvrir la nouvelle cinématique de la nouvelle extension de World of Warcraft</p>
-                    <a><button type="button" class="btn btn-danger btn-redy"><i class="fas fa-play-circle"></i> Voir la bande annonce</button></a>
+                    <a href="https://www.youtube.com/watch?v=jSJr3dXZfcg " target="_blank"><button type="button" class="btn btn-danger btn-redy"><i class="fas fa-play-circle"></i> Voir la bande annonce</button></a>
                 </div>
             </div>
 
