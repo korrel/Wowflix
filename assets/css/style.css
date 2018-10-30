@@ -41,6 +41,15 @@ body {
     z-index:10;
 }
 
+.filter02 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #242123a8;
+    background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+    z-index: 10;
+}
+
 .navbar {
     position: absolute;
     top: 0;
@@ -161,12 +170,13 @@ a:hover .btn-tous {
 
 .shadow-video {
     box-shadow: 0 0 3rem rgba(139, 1, 1, 0.5);
+    margin-left: 50px;
 }
 
 .volet-gauche {
     justify-content: center;
     height: 100%;
-    background-color: #00000075;
+    background-color: #5e0a0a75;
     display: flex;
     flex-direction: column;
 }
@@ -184,6 +194,22 @@ a:hover .btn-tous {
     top:-10%;
     opacity: 0.5;
 }
+
+.ajout-film-section {
+    height: 400px;
+    background: url(../img/bg-ajoute-video.jpg);
+    background-size: cover;
+}
+
+.section-ajout {
+    position: absolute;
+    z-index: 900;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 
 /* ------------------------------- footer ---------------------------- */
