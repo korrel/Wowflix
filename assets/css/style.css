@@ -202,6 +202,12 @@ a:hover .btn-tous {
     background-size: cover;
 }
 
+.ajout-film-section02 {
+    height: 200px;
+    background: url(../img/bg-ajoute-video.jpg);
+    background-size: cover;
+}
+
 .section-ajout {
     position: absolute;
     z-index: 900;
@@ -221,6 +227,27 @@ a:hover.btn-nav-ajout {
     background-color: rgba(194, 194, 194, 0.575);
 }
 
+/* ------------------------------- Page Single ---------------------------- */
+
+.titre_single{
+    height: auto;
+}
+
+.ariane {
+    display: flex!important;
+}
+
+.margin-sup {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+.img-cover {
+    height: 90px;
+}
+
+.bg-date {
+    background: linear-gradient(to right, #a90329 0%, #8f0222 44%, #8f022300 100%);
+}
 
 /* ------------------------------- footer ---------------------------- */
 

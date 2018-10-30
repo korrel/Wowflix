@@ -38,7 +38,7 @@ require_once(__DIR__.'/../config/function.php');
 
   <body>
     <!-- ///////////////////////////  header /////////////////////////// --> 
-    <header class="container-fluid px-0 position-relative">
+    <header class="container-fluid px-0 position-relative bandeau-header">
         
         <!-- ///////////////////////////  NAVBAR /////////////////////////// --> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-menu">
@@ -84,6 +84,9 @@ require_once(__DIR__.'/../config/function.php');
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 
 
+        <?php 
+        if (empty($currentPageTitle)) { ?>
+
         <section class="container-fluid intro px-0 position-relative border-bottom border-danger">
             <video autoplay muted loop id="bg-video">
                 <source src="assets/video/wow.mp4" type="video/mp4">
@@ -99,5 +102,7 @@ require_once(__DIR__.'/../config/function.php');
 
             <div class="filter"></div>
         </section>
+            
+        <?php } ?>
 
     </header>
