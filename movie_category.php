@@ -25,7 +25,11 @@ require_once(__DIR__.'/partials/header.php');
 ?>
 
 <main>
-    <section class="container-fluid pt-4 pb-5">
+    <section class="container-fluid pt-4 pb-5 position-relative category-encart">
+        <?php echo '<img src="'.$category['background'].' " alt="" class="img-filter-category">';?>
+        <div class="container-fluid position-absolute bg-category">
+            <div class="filter-category"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col pt-5 py-3 encart-titre-category">
@@ -34,6 +38,8 @@ require_once(__DIR__.'/partials/header.php');
             </div>
         </div>
     </section>
+    
+    <?php var_dump($category['background']); ?>
 
 
 

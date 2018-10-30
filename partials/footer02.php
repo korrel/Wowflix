@@ -4,7 +4,7 @@
 
     <!-- ///////////////////////////  FOOTER /////////////////////////// --> 
     
-    <footer class="container-fluid pt-md-5 bg-dark footer-content">
+    <footer class="container-fluid pt-2 bg-dark footer-content">
         <div class="container">
             <div class="row flex-direction-row">
                 <div class="col-12 col-md">
