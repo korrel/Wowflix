@@ -1,3 +1,14 @@
+<?php
+
+// Le fichier config.php est inclus sur toutes les pages -->
+// ATTENTION on part du fichier HEADER qui inclus le fichier PHP
+require_once(__DIR__.'/../config/config.php'); 
+
+$currentPageTitle = null;
+
+?>
+
+<!-- ///////////////////////////  html /////////////////////////////////-->
 
 <!doctype html>
 <html lang="fr">
@@ -8,7 +19,15 @@
     <meta name="author" content="Sébastien Renoult">
     <link rel="icon" href="assets/img/favicon.png">
 
-    <title>Wowflix | Cinématiques de World of Warcraft</title>
+    <title>
+        <?php 
+            if ($currentPageTitle === null) {  // si on est sur la page d'accueil
+                echo $siteName. ' | Cinématiques de World of Warcraft';
+            }else { // si on est sur une autre page
+                echo $currentPageTitle . ' | ' .$siteName;
+            }
+        ?>
+    </title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
@@ -23,42 +42,44 @@
         
         <!-- ///////////////////////////  NAVBAR /////////////////////////// --> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-menu">
-            <a class="navbar-brand" href="#">WOWflix</a>
+            <a class="navbar-brand" href="index.php"><?= ($siteName); ?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto menu-principal">
-                    <li class="nav-item active p-2">
-                        <a class="nav-link" href="#">Accueil</a>
+                    <li class="nav-item active p-2 <?= ($currentPageUrl === 'index')? 'active' : ''; ?>">
+                        <a class="nav-link" href="index.php">Accueil</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Vanilla</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">Vanilla</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">BC</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">BC</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">WotLK</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">WotLK</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Cata</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">Cata</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">MoP</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">MoP</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">WoD</a>
+                    <li class="nav-item p-2 <?= ($page === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">WoD</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Legion</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">Legion</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Bfa</a>
+                    <li class="nav-item p-2 <?= ($currentPageUrl === 'movie_category')? 'active' : ''; ?>">
+                        <a class="nav-link" href="movie_category.php">Bfa</a>
                     </li>
                 </ul>
             </div>
+
+            <a class="btn btn-sm btn-outline-danger btn-nav-ajout px-3" type="button">Ajouter une vidéo</a>
         </nav>
 
         <!-- ///////////////////////////  JUMBOTRON /////////////////////////// --> 

@@ -61,7 +61,7 @@ body {
 
 .bg-menu {
     background-color: #0000004f !important;
-    padding: 0 1rem;
+    padding: 0 0 0 1rem;
 }
 
 .menu-principal .active{
@@ -210,6 +210,15 @@ a:hover .btn-tous {
     transform: translate(-50%, -50%);
 }
 
+a.btn-nav-ajout{
+    background-color: rgba(107, 107, 107, 0.575);
+    color: #fff !important;
+    display: block;
+    line-height: 3.5;
+}
+a:hover.btn-nav-ajout {
+    background-color: rgba(194, 194, 194, 0.575);
+}
 
 
 /* ------------------------------- footer ---------------------------- */
