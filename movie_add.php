@@ -1,7 +1,5 @@
 <?php 
 
-///////////////////////////////////////////////////////////////////////////////////////////
-
 $currentPageTitle = 'Ajouter une vidéo';
 require_once(__DIR__.'/partials/header.php');
 
@@ -61,23 +59,47 @@ require_once(__DIR__.'/partials/header.php');
         if (empty($released)) { // Vérifie si le nom est vide
             $errors['released'] = 'Le champs "Date" ne doit pas être vide. <br />';
         }
-        if (empty($category)) { // Vérifie si le nom est vide
+        if (empty($category) || !in_array($category,['1','2','3','4','5','6','7','8'] )) { // Vérifie si le nom est vide
             $errors['category'] = 'Le champs "Extension" ne doit pas être vide. <br />';
         }
+
+        // ////////////////////////  Upload de l'image  ////////////////////////////////
+        
+
+        $file = $cover['tmp_name']; // Emplacement du fichier temporaire 
+        $fileName = 'img/'.$cover['name'];  // Variable pour la base de données
+        $finfo = finfo_open(FILEINFO_MIME_TYPE); // Permet d'ouvrir un fichier
+        $mineType = finfo_file($finfo, $file); // Ouvre le fichier et renvoie image/jpg
+        $allowedExtensions = ['image/jpg', 'image/jpeg', 'image/png', 'image/png'];
+        // Si l'extension n'est pas autorisée, il y a une erreur
+        if(!in_array($mineType, $allowedExtensions)){
+            $errors['cover'] = 'Ce type n\'est pas autorisé';
+        }
+        // vérifier la taille du fichier ( "size" est en octet / inférieur à 30ko autorisé )
+        if($cover['size']/ 1024 > 30) {
+            $errors['cover'] = 'L\'image ets trop lourde !';            
+        }
+        if(!isset($errors['cover'])){
+            move_uploaded_file($file, __DIR__.'/assets/'.$fileName);   // on déplace le fichier uploadé où on le souhaite 
+        }   
+        
+        // ///////////////////////////////////////////////////////////////////////////
+
         
         if (empty($errors)) {
             // on défini la variable VALIDATION
             $validation = 'Envoi du mail';
 
             // envoie à la base de donnée
-            $query = $db ->prepare('INSERT INTO movies (`title`,`description`,`video_link`, `cover`,`released_at`,`category_id`) VALUES (:title, :description, :video, :cover, :released, :category))');
+            $query = $db ->prepare('INSERT INTO movies (`title`,`description`,`video_link`, `cover`,`released_at`,`category_id`) 
+                                                VALUES (:title, :description, :video, :cover, :released, :category)');
             $query -> bindValue(':title', $title, PDO::PARAM_STR);
             $query -> bindValue(':description', $description, PDO::PARAM_STR);
             $query -> bindValue(':video', $video, PDO::PARAM_STR);
-            $query -> bindValue(':cover', $cover, PDO::PARAM_STR);
+            $query -> bindValue(':cover', $fileName, PDO::PARAM_STR);
             $query -> bindValue(':released', $released, PDO::PARAM_STR);
             $query -> bindValue(':category', $category, PDO::PARAM_STR);
-            
+
             $query -> execute();
         }
     }
@@ -140,7 +162,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <input type="file" name="cover" class="form-control <?= (isset($errors['cover'])) ? 'is-invalid' : ''; ?>"
-                            value="<?php var_dump ($cover); ?>" placeholder="">
+                            value="" placeholder="">
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['cover'])) {
@@ -171,14 +193,14 @@ require_once(__DIR__.'/partials/header.php');
                                 <!-- vérification des infos ;)-->
                                 <option value="">Choisissez l'extension</option>
                                 <option <?php //echo($genre==="animation" ) ? 'selected' : '' ; ?> value="animation">Animation</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
-                                <option value="action">Action</option>
+                                <option <?php echo($category === "1") ? 'selected' : ''; ?> value ="1">Vanilla</option>
+                                <option <?php echo($category === "2") ? 'selected' : ''; ?> value ="2">Burning Crusade</option>
+                                <option <?php echo($category === "3") ? 'selected' : ''; ?> value ="3">Wrath of the Lich King</option>
+                                <option <?php echo($category === "4") ? 'selected' : ''; ?> value ="4">Cataclysm</option>
+                                <option <?php echo($category === "5") ? 'selected' : ''; ?> value ="5">Mists of Pandaria</option>
+                                <option <?php echo($category === "6") ? 'selected' : ''; ?> value ="6">Warlords of Draenor</option>
+                                <option <?php echo($category === "7") ? 'selected' : ''; ?> value ="7">Legion</option>
+                                <option <?php echo($category === "8") ? 'selected' : ''; ?> value ="8">Battle for Azeroth</option>
                             </select>
                             <!-- vérification des infos ;)-->
                             <?php 
