@@ -113,7 +113,9 @@ body {
 
 /* ------------------------------- main ---------------------------- */
 
-
+.text-danger-video {
+    color: #dbd3d3b5!important;
+}
 
 .encart-titre h2{
     border-left:4px solid rgba(169,3,41,1);
@@ -131,9 +133,13 @@ a:hover .btn-tous {
     border-right:2px solid rgba(169,3,41,1)!important;
 }
 
-.btn-ajout-footer {
+a.btn-ajout-footer {
     background-color: rgba(169, 3, 3, 1);
     color:#fff;
+}
+
+a:.btn-ajout-footer {
+    background-color: rgb(212, 12, 12);
 }
 
 .filtre-sombre{

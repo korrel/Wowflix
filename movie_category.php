@@ -57,7 +57,7 @@ require_once(__DIR__.'/partials/header.php');
                                     </a>
                                     <div class="card-body p-0 d-flex">
                                         <h6 class="col-8 p-2 text-white "><?php echo($movie['title']);?></h6>
-                                        <p class="col-4 p-2 text-danger text-right"><?php echo($movie['released_at']);?></p>
+                                        <p class="col-4 p-2 text-danger-video text-right"><?php echo($movie['released_at']);?></p>
                                     </div>
                                 </div>   
                             </div>

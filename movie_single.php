@@ -56,7 +56,7 @@ require_once(__DIR__.'/partials/header.php');
 
         <div class="row">
             <div class="col-md-8">
-                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/aL12LwFDrxw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="100%" height="400px" src="<?= $movie['video_link']; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="col-md-4">
                 <h2 class="display-6 text-white pt-2 pb-3"> <?= $movie['title']; ?></h2>
