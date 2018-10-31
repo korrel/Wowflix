@@ -112,6 +112,15 @@ body {
     z-index: 10;
 }
 
+.filter-category03 {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff730057;
+    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+    z-index: 10;
+}
+
 .bg-nuit {
     background: linear-gradient(to bottom, rgba(36, 36, 36, 0.3) 0%, rgba(2,15,22,1) 100%);
     width: 100%;
@@ -155,7 +164,7 @@ a.btn-ajout-footer {
     color:#fff;
 }
 
-a:.btn-ajout-footer {
+a.btn-ajout-footer {
     background-color: rgb(212, 12, 12);
 }
 
@@ -301,6 +310,22 @@ a.btn-dangereux {
 a:hover.btn-dangereux {
     color: rgb(255, 255, 255);
     background: linear-gradient(to left, #a9032a 0%, #8f0223 100%);
+}
+
+a.btn-succe {
+    color: rgba(255, 255, 255, 0.527);
+    background: linear-gradient(to left, #ec5f0d79 0%, #d1380970 100%);
+    border: none;
+}
+
+a:hover.btn-succe {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to left, #ec5f0dd8 0%, #d13809d3 100%);
+}
+
+.bas {
+    top: 0;
+    z-index: 50;
 }
 
 .encart-titre-category h2{

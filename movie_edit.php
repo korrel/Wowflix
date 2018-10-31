@@ -1,6 +1,21 @@
 <?php 
 
-$currentPageTitle = 'Ajouter une vidéo';
+// Récupérer l'ID du film dans l'url
+$id=isset($_GET['id'])? $_GET['id'] : 0;
+// récupérer la base de données
+require_once(__DIR__.'/config/database.php');
+
+
+//////////////////////    récupèrer les informations du film ////////////////////////////
+
+$query = $db -> prepare('SELECT * FROM movies WHERE id = :id');
+$query -> bindValue(':id', $id, PDO::PARAM_INT); // on s'assure que l'id est bien un entier
+$query -> execute(); // execute la requête
+$movie = $query -> fetch();
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+$currentPageTitle = 'Modifier la vidéo';
 require_once(__DIR__.'/partials/header.php');
 
 ?>
@@ -17,7 +32,7 @@ require_once(__DIR__.'/partials/header.php');
                         <nav aria-label="breadcrumb position-relative ">
                             <ol class="breadcrumb bg-transparent ariane">
                                 <li class="breadcrumb-item"><a href="index.php" class="text-danger">Accueil</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Ajouter une vidéo</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modifier la vidéo</li>
                             </ol>
                         </nav>
                     </div>
@@ -114,15 +129,15 @@ require_once(__DIR__.'/partials/header.php');
 
                     <div class="form-row">
                         <div class="fomrm-group col-md-12">
-                            <h2 class="display-4 text-center text-white pb-3"> Ajouter une vidéo</h2>
+                            <h2 class="display-4 text-center text-white pb-3"> Modifier la vidéo</h2>
                         </div>
                     </div>
         
                     <!-- /////////////////// title //////////////////// -->
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <input type="text" name="title" class="form-control <?= (isset($errors['title'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php echo $title; ?>" placeholder="Titre de la vidéo">
+                            <input type="text" name="title" class="form-control <?= (isset($movie['title'])) ? 'is-invalid' : ''; ?>"
+                                value="<?php echo $movie['title']; ?>" placeholder="Titre de la vidéo">
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['title'])) {
@@ -136,7 +151,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="row ">
                         <div class="form-group col-md-12">
                             <textarea class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : ''; ?>" name="description"
-                                rows="4" placeholder="Description de la vidéo"><?php echo $description; ?></textarea>
+                                rows="4" placeholder="Description de la vidéo"><?php echo $movie['description']; ?></textarea>
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['description'])) {
@@ -150,7 +165,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <input type="text" name="video_link" class="form-control <?= (isset($errors['video'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php echo $video; ?>" placeholder="URL de la vidéo">
+                                value="<?php echo $movie['video_link']; ?>" placeholder="URL de la vidéo">
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['video'])) {
@@ -179,7 +194,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="date" name="released" class="form-control <?= (isset($errors['released'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php echo $released; ?>" placeholder="">
+                                value="<?php $movie['relesead_at']; ?>" placeholder="">
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['released'])) {
@@ -191,7 +206,7 @@ require_once(__DIR__.'/partials/header.php');
                         <!-- /////////////////// category_id //////////////////// -->
                         <div class="form-group col-md-6">
                             <select name="category" class="form-control <?= (isset($errors['category'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php echo $category; ?>" placeholder="Extension">
+                                value="<?php echo $movie['catgery_id']; ?>" placeholder="Extension">
                                 <!-- vérification des infos ;)-->
                                 <option value="">Choisissez l'extension</option>
                                 <option <?php //echo($genre==="animation" ) ? 'selected' : '' ; ?> value="animation">Animation</option>
@@ -238,7 +253,7 @@ require_once(__DIR__.'/partials/header.php');
         </div>
     <?php } ?>
 
-    <div class="filter-category02 position-absolute"></div>
+    <div class="filter-category03 position-absolute"></div>
 
 
   

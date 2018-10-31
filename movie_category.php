@@ -48,10 +48,12 @@ require_once(__DIR__.'/partials/header.php');
                 <div class="row py-3">
                     <?php  foreach ($movies as $movie){ ?>
                         <div class="col-md-4">
-                            <div class="col-md-12 px-0 d-flex justify-content-end">
-                                <a href="<?= "movie_delete.php?id=" . $movie['id_movie'] ?>" class="btn btn-dangereux btn-sm rounded-0">Supprimer</a>
-                            </div>
+                            
                             <div class="card mb-3 bg-transparent position-relative encart-visuel">
+                                <div class="col-md-12 px-0 d-flex justify-content-end position-absolute bas">
+                                    <a href="<?= "movie_edit.php?id=" . $movie['id_movie'] ?>" class="btn btn-succe btn-sm rounded-0">Modifier</a>
+                                    <a href="<?= "movie_delete.php?id=" . $movie['id_movie'] ?>" class="btn btn-dangereux btn-sm rounded-0">Supprimer</a>
+                                </div>
                                 <a href="<?= "movie_single.php?id=" . $movie['id_movie'] ?>" class="filtre-sombre position-relative">
                                         <div class="icone-play position-absolute text-white "><i class="fas fa-play-circle icone-web"></i></div>
                                         <div class="encart-viv">
