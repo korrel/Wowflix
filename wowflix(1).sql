@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 30 oct. 2018 à 17:36
+-- Généré le :  mer. 31 oct. 2018 à 15:32
 -- Version du serveur :  10.1.36-MariaDB
 -- Version de PHP :  7.2.10
 
@@ -30,7 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL
+  `name` varchar(45) DEFAULT NULL,
+  `Acronyme` varchar(45) DEFAULT NULL,
+  `background` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
