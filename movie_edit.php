@@ -179,7 +179,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <input type="file" name="cover" class="form-control <?= (isset($errors['cover'])) ? 'is-invalid' : ''; ?>"
-                            value="" placeholder="">
+                            value="">
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['cover'])) {
@@ -194,7 +194,7 @@ require_once(__DIR__.'/partials/header.php');
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="date" name="released" class="form-control <?= (isset($errors['released'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php $movie['relesead_at']; ?>" placeholder="">
+                                value="<?php $movie['released_at']; ?>" >
                             <!-- vérification des infos ;)-->
                             <?php 
                                 if(isset($errors['released'])) {
@@ -206,7 +206,7 @@ require_once(__DIR__.'/partials/header.php');
                         <!-- /////////////////// category_id //////////////////// -->
                         <div class="form-group col-md-6">
                             <select name="category" class="form-control <?= (isset($errors['category'])) ? 'is-invalid' : ''; ?>"
-                                value="<?php echo $movie['catgery_id']; ?>" placeholder="Extension">
+                                value="<?php echo $movie['catgery_id']; ?>">
                                 <!-- vérification des infos ;)-->
                                 <option value="">Choisissez l'extension</option>
                                 <option <?php //echo($genre==="animation" ) ? 'selected' : '' ; ?> value="animation">Animation</option>
