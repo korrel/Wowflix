@@ -5,7 +5,7 @@
             <div class="container text-center text-white section-ajout">
                 <h1 class="display-4">Wowflix se met à jour</h1>
                 <p class="lead">Vous pouvez proposer une nouvelle bande-annonce ou cinématique</p>
-                <a class="btn btn-danger" href="movie_add.php"><i class="fas fa-play-circle"></i> Ajouter une vidéo</a>
+                <a class="btn btn-ajout-footer" href="movie_add.php"><i class="fas fa-play-circle"></i> Ajouter une vidéo</a>
             </div>
         </section>
 
