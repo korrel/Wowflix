@@ -292,6 +292,17 @@ a:hover.btn-nav-ajout {
     background: linear-gradient(to right, #a90329 0%, #8f0222 44%, #8f022300 100%);
 }
 
+a.btn-dangereux {
+    color: rgba(255, 255, 255, 0.527);
+    background: linear-gradient(to left, #a9032a7e 0%, #8f022381 100%);
+    border:none;
+}
+
+a:hover.btn-dangereux {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to left, #a9032a 0%, #8f0223 100%);
+}
+
 .encart-titre-category h2{
     text-align:center;
     padding-bottom:35px;

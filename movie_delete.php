@@ -35,39 +35,61 @@ require_once(__DIR__.'/partials/header.php');
 ?>
 
 
-<div class="container-fluid position-relative deuxieme-section">
+<div class="container-fluid position-relative deuxieme-section px-0">
     <div class="container height-single mb-5 pb-3">
 
         <div class="row">   
             <div class="col">
                 <div class="jumbotron jumbotron-fluid bg-transparent margin-sup">
                     <div class="container pt-5">
-                        <nav aria-label="breadcrumb position-relative ">
-                            <ol class="breadcrumb bg-transparent ariane">
-                                <li class="breadcrumb-item"><a href="index.php" class="text-danger">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="<?= "movie_category.php?id=" . $category['id']; ?>" class="text-danger"><?= $category['name']; ?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $movie['title']; ?></li>
-                            </ol>
-                        </nav>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-8">
-                <iframe width="100%" height="400" src="<?= $movie['video_link']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="col-md-4 px-5">
-                <h2 class="display-6 text-white pt-2 pb-3"> <?= $movie['title']; ?></h2>
-                <p class="text-white text-justify bg-date p-2"><?= $movie['released_at']; ?></p>
-                <p class="text-muted text-justify"><?= $movie['description']; ?></p>
-                <img class="img-cover" src="assets/<?= $movie['cover']; ?>">
+        <!-- //////////////////////  CONTROLE DE SUPPRESSION /////////////////////// -->
+        <?php 
+
+        if (isset($_POST)) {
+
+                // Récupérer l'ID des films dans l'url
+                $id=isset($_GET['id'])? $_GET['id'] : 0;
+
+                 // Suppression
+                $query = $db->prepare('DELETE FROM movies WHERE id = :id');
+                $query->bindValue(':id', $id, PDO::PARAM_INT);
+                $query->execute();
+        }
+
+        ?>
+
+
+        <div class="row content-category mb-5" >
+            <div class="col-md-8 mx-auto px-0 d-flex justify-content-between">
+                <div class="col-md-8 px-0">
+                    <h2 class="display-6 text-white pt-2 pb-3"> <?= $movie['title']; ?></h2>
+                </div>
+                <div class="col-md-4 px-0 d-flex justify-content-end">
+                    <form class="form-inline">
+                        <a><button type="submit" class="btn btn-danger btn-dangereux">Supprimer la vidéo</button><a>
+                    </form>
+                </div>
             </div>
         </div>
 
+        
+        <div class="row content-category">
+            <div class="col-md-8 mx-auto">
+                <iframe width="100%" height="400px" src="<?= $movie['video_link']; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+
+
     </div>
+    <div class="filter-category02 position-absolute"></div>
 </div>
 
 <!-- Le fichier Header.php est inclus sur la page-->
-<?php require_once(__DIR__.'/partials/footer_single.php'); ?>
+<?php require_once(__DIR__.'/partials/footer02.php'); ?>

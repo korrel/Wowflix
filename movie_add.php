@@ -100,7 +100,9 @@ require_once(__DIR__.'/partials/header.php');
             $query -> bindValue(':released', $released, PDO::PARAM_STR);
             $query -> bindValue(':category', $category, PDO::PARAM_STR);
 
-            $query -> execute();
+            if ($query->execute()) { // On insère la video dans la BDD
+                $success = true;
+            }
         }
     }
 ?>
@@ -211,19 +213,36 @@ require_once(__DIR__.'/partials/header.php');
                         </div>
                     </div>
         
-                    <button type="submit" class="btn btn-success btn-block btn-ajouter w-75 mx-auto"">Ajouter la vidéo</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div style="width:200px;height:0;padding-bottom:70%;position:relative;"><iframe src="https://giphy.com/embed/KWBHHKwJzkADe" width="200px" height="auto" style="position:relative" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+                        </div>
+                        <div class="form-group col-md-6 d.flex align-self-center">
+                            <button type="submit" class="btn btn-success btn-block btn-ajouter w-75 mx-auto"">Ajouter la vidéo</button>
+                        </div>
+
+                    </div>
         
                 </div>
             </form>
         </div>
     </div>
+        
 
-
-        <div class="alert alert-success valid" role="alert">
-            <?php $validation ?>
+    <?php if (isset($success) && $success) { ?>
+        <div class="alert alert-success alert-dismissible fade show valid">
+            La pizza <strong><?php echo $title; ?></strong> a bien été ajouté avec l'id <strong><?php echo $db->lastInsertId(); ?></strong> !
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+    <?php } ?>
 
-        <div class="filter-category02 position-absolute"></div>
+    <div class="filter-category02 position-absolute"></div>
+
+
+  
+
 
     </div>
 </div>
