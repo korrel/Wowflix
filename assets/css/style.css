@@ -96,6 +96,22 @@ body {
     background-repeat-y: repeat;
 }
 
+.deuxieme-section02 {
+    background: url(../img/bg-mur.jpg) center;
+    width: 100%;
+    height: 100vh;
+    background-repeat-y: repeat;
+}
+
+.filter-category02 {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7d020291;
+    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+    z-index: 10;
+}
+
 .bg-nuit {
     background: linear-gradient(to bottom, rgba(36, 36, 36, 0.3) 0%, rgba(2,15,22,1) 100%);
     width: 100%;
@@ -293,7 +309,7 @@ a:hover.btn-nav-ajout {
 .bg-category {
     top:0;
     left: 0;
-    height: 680px;
+    height: 100%;
     left: 0;
     top: 0;
     padding: 0;
@@ -321,12 +337,13 @@ a:hover.btn-nav-ajout {
     top: 0;
     left: 0;
     width: 100%;
-    height: 680px;
+    height: auto;
     background: linear-gradient(to bottom, rgba(2,15,22,0) 0%,rgba(2,15,22,1) 100%);
 }
 
 .category-encart {
     min-height: 680px;
+    overflow: hidden;
 }
 
 /* ------------------------------- footer ---------------------------- */
@@ -334,4 +351,13 @@ a:hover.btn-nav-ajout {
 .footer-content {
     position: relative;
     margin-bottom: 0 !important;
+}
+
+.valid {
+    color: #ffffff;
+    background-color: #6ca71a7a;
+    border: none;
+    position: relative;
+    z-index: 50;
+    text-align: center;
 }
